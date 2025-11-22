@@ -151,7 +151,7 @@ import Button from "./AnimatedButton";
 const navigationItems = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
-  { name: "Catelog", href: "/products" },
+  { name: "Catelog", href: "/Products" },
   { name: "Contact Us", href: "/contact" },
 ];
 

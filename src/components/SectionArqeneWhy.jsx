@@ -53,25 +53,25 @@ export default function SectionArqeneWhy() {
     // OUTER: rounded white strip
     <section
       ref={sectionRef}
-      className="bg-white py-20 sm:py-28 rounded-[80px] overflow-hidden"
+      className="bg-white pt-10 sm:pt-12 pb-20 sm:pb-24 overflow-hidden"
     >
       {/* INNER: just layout, no rounding */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-10">
         <p
           data-why-animate
-          className="mb-3 text-center text-sm text-black opacity-0 translate-y-6"
+          className="mb-10 text-center text-2xl font-extrabold text-black opacity-0 translate-y-6"
         >
           The Arqene Advantage
         </p>
 
         <h2
           data-why-animate
-          className="mb-10 text-center text-3xl sm:text-4xl lg:text-5xl text-black opacity-0 translate-y-6"
+          className="mb-10 text-center text-3xl sm:text-4xl lg:text-5xl font-extrabold text-black opacity-0 translate-y-6"
         >
           WHY CHOOSE US
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {WHY_ITEMS.map((item) => (
             <article
               key={item.id}
@@ -114,7 +114,54 @@ export default function SectionArqeneWhy() {
               </div>
             </article>
           ))}
-        </div>
+        </div> */}
+        <div className="grid w-full max-w-[98rem] mx-auto grid-cols-1 md:grid-cols-3 gap-8 md:gap-2">
+  {WHY_ITEMS.map((item) => (
+    <article
+      key={item.id}
+      className="group flex flex-col bg-white overflow-hidden shadow-sm transition-transform duration-300 ease-out hover:-translate-y-2"
+      onMouseEnter={() =>
+        window.dispatchEvent(new Event("cursor-small-enter"))
+      }
+      onMouseLeave={() =>
+        window.dispatchEvent(new Event("cursor-small-leave"))
+      }
+      onTouchStart={() =>
+        window.dispatchEvent(new Event("cursor-small-enter"))
+      }
+      onTouchEnd={() =>
+        window.dispatchEvent(new Event("cursor-small-leave"))
+      }
+    >
+      {/* taller image area */}
+      <div className="relative h-[260px] sm:h-[280px] md:h-[320px] lg:h-[520px] max-w-[1200px] overflow-hidden">
+        <img
+          src={item.image}
+          alt={item.title}
+          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </div>
+
+      {/* bigger text area */}
+      <div className="px-8 py-8 flex-1 flex flex-col">
+        <h3
+          data-why-animate
+          className="text-lg font-semibold text-black mb-3 opacity-0 translate-y-6"
+        >
+          {item.title}
+        </h3>
+        <p
+          data-why-animate
+          className="text-sm text-slate-700 leading-relaxed opacity-0 translate-y-6"
+        >
+          {item.text}
+        </p>
+      </div>
+    </article>
+  ))}
+</div>
+
 
         <div className="mt-10 flex justify-center">
           <Button label="Join Community" variant="dark" />
