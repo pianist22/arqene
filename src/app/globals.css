@@ -17,7 +17,7 @@
   --arq-grey-soft: #e4e4e7;
   --arq-grey: #a1a1aa;
   --arq-red: #e70909;       /* close to logo é */
-  --arq-orange-red: #c74427;
+  --arq-orange-red:#e70909;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
