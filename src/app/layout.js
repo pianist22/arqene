@@ -1,6 +1,7 @@
 // app/layout.jsx
 import "./globals.css";
 import ArqeneNavbar from "../components/navbar/ArqeneNavbar";
+import ArqeneFooter from "@/components/footer/ArqeneFooter";
 
 export const metadata = {
   title: "Arqené – Interior Design",
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
         <ArqeneNavbar />
         {/* Push page content below the fixed navbar */}
         <main className="pt-20">{children}</main>
+        <ArqeneFooter/>
       </body>
     </html>
   );
