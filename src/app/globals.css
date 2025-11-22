@@ -166,13 +166,21 @@ body {
 }
 
 /* Initial state: dark lines on light-ish navbar */
-.checkboxtoggler-light .line {
+/* .checkboxtoggler-light .line {
   background: rgba(15, 15, 18, 0.94);
 }
 
 /* Open state: light lines on dark gradient overlay */
-.checkboxtoggler-dark .line {
+/* .checkboxtoggler-dark .line {
   background: rgba(235, 235, 241, 0.96);
+}  */
+
+.checkboxtoggler-light .line {
+  background: rgba(15, 15, 18, 0.94);
+}
+
+.checkboxtoggler-dark .line {
+  background: rgba(15, 15, 18, 0.94);  /* was light grey before */
 }
 
 /* Hidden checkbox */
