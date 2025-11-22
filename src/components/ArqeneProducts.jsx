@@ -313,16 +313,16 @@ export default function Products() {
       );
     }, section);
 
-    return () => ctx.revert();
+    return () => ctx.revert();      //[#d6d9db]
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className="py-24 bg-[#f5f1ec] text-slate-900 overflow-hidden"
+      className="py-24 bg-[#d6d9db] text-slate-900 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10">
-        <h2 className="mb-12 text-center text-sm tracking-[0.25em] uppercase text-slate-500">
+        <h2 className="mb-12 text-center text-4xl text-3xl  tracking-[0.25em] uppercase text-slate-500">
           Products
         </h2>
       </div>
@@ -356,7 +356,7 @@ export default function Products() {
         className="flex-shrink-0 w-[80vw] md:w-[45vw] lg:w-[32vw] max-w-[520px] flex flex-col items-center"
       >
               {/* big light card with centered product image */}
-              <div className="w-full bg-[#f5f1ec] aspect-[4/3] flex items-center justify-center">
+              <div className="w-full bg-[#f5f1ec] aspect-[3/2] flex items-center justify-center">
                 <img
                   src={product.image}
                   alt={product.name}
