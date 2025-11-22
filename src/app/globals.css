@@ -166,13 +166,21 @@ body {
 }
 
 /* Initial state: dark lines on light-ish navbar */
-.checkboxtoggler-light .line {
+/* .checkboxtoggler-light .line {
   background: rgba(15, 15, 18, 0.94);
 }
 
 /* Open state: light lines on dark gradient overlay */
-.checkboxtoggler-dark .line {
+/* .checkboxtoggler-dark .line {
   background: rgba(235, 235, 241, 0.96);
+}  */
+
+.checkboxtoggler-light .line {
+  background: rgba(15, 15, 18, 0.94);
+}
+
+.checkboxtoggler-dark .line {
+  background: rgba(15, 15, 18, 0.94);  /* was light grey before */
 }
 
 /* Hidden checkbox */
@@ -275,4 +283,71 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* ---------- Footer background + layout ---------- */
+
+.footer-bg {
+  background: linear-gradient(
+    180deg,
+    #f6f7fb 0%,
+    #e3e5ee 45%,
+    #d2d5e2 100%
+  );
+  border-top: 1px solid rgba(148, 163, 184, 0.32);
+  box-shadow:
+    0 -6px 24px rgba(15, 23, 42, 0.09),
+    0 -1px 2px rgba(15, 23, 42, 0.04);
+}
+
+/* Social icon chips */
+
+.footer-social-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 0%, #020617, #020617 70%);
+  box-shadow:
+    0 8px 22px rgba(15, 23, 42, 0.55),
+    0 0 0 1px rgba(15, 23, 42, 0.85);
+  color: #f9fafb;
+  transition: all 220ms ease-out;
+}
+
+.footer-social-icon svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.footer-social-icon:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.7),
+    0 0 0 1px rgba(15, 23, 42, 0.95);
+  background: radial-gradient(circle at 15% 0%, #020617, #020617 85%);
+}
+
+/* Footer rolling link color + weight */
+
+.footer-item {
+  --arq-footer-accent: var(--arq-orange-red);
+}
+
+.footer-link-roll {
+  color: #111827;            /* near black-grey for readability */
+  transition: color 260ms ease, font-weight 260ms ease;
+}
+
+.footer-item:hover .footer-link-roll {
+  color: var(--arq-footer-accent);
+  font-weight: 600;
+}
+
+/* Extra breathing room so text-roll lines don't collide */
+
+.footer-link-row {
+  padding-block: 0.25rem;     /* vertical padding per row */
 }
