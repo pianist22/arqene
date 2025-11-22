@@ -381,11 +381,11 @@ export default function Products() {
       {/* button under pinned gallery section */}
       <div className="mt-16 flex justify-center">
         <Link
-          href="/Products" // change to your showcase route
+          href="/products" // change to your showcase route
           
       
         >
-        <Button label="View Our Projects" variant="dark"></Button>  
+        <Button label="View Our Products" variant="dark"></Button>  
         </Link>
       </div>
     </section>

@@ -76,10 +76,10 @@ function ArqeneFooter() {
 
   return (
     <footer className="footer-bg mt-20 border-t border-border/60">
-      <div className="mx-auto flex max-w-7xl flex-col py-12 lg:py-16">
+      <div className="mx-auto flex max-w-7xl flex-col px-4 py-12 sm:px-6 lg:px-10 lg:py-16">
         {/* Top row */}
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
-          {/* Left: logo + copy + socials – pinned left */}
+          {/* Left: logo + copy + socials */}
           <div className="w-full lg:max-w-md">
             <div className="relative h-10 w-auto md:h-12">
               <Image
@@ -90,13 +90,13 @@ function ArqeneFooter() {
                 className="h-full w-auto object-contain"
               />
             </div>
-            <p className="mt-4 max-w-sm text-[0.95rem] leading-relaxed text-slate-700">
+            <p className="mt-4 max-w-sm text-[1rem] leading-relaxed text-slate-700">
               Crafted interiors and spaces that feel timeless, tailored, and
               quietly extravagant.
             </p>
 
-            {/* Social icons aligned bottom-left */}
-            <div className="mt-8 flex items-center gap-3">
+            {/* Social icons */}
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link href="#" aria-label="Arqené on Instagram">
                 <span className="footer-social-icon">
                   <FaInstagram />
@@ -120,11 +120,11 @@ function ArqeneFooter() {
             </div>
           </div>
 
-          {/* Right: Navigation + Contact – pinned right */}
+          {/* Right: Navigation + Contact */}
           <div className="flex w-full flex-col gap-10 sm:flex-row sm:justify-end sm:gap-16 lg:w-[52%]">
             {/* Navigation column */}
             <div className="min-w-44">
-              <p className="text-[0.95rem] font-semibold uppercase tracking-[0.2em] text-slate-500">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 sm:text-[0.95rem]">
                 Navigation
               </p>
               <ul className="mt-5 space-y-2.5">
@@ -134,7 +134,7 @@ function ArqeneFooter() {
                     className="footer-item footer-link-row group cursor-pointer"
                   >
                     <Link href={item.href}>
-                      <TextRoll className="text-[1rem] md:text-base">
+                      <TextRoll className="text-[1.02rem] md:text-[1.06rem]">
                         {item.name}
                       </TextRoll>
                     </Link>
@@ -143,32 +143,35 @@ function ArqeneFooter() {
               </ul>
             </div>
 
+          
             {/* Contact column */}
             <div className="min-w-52">
-              <p className="text-[0.95rem] font-semibold uppercase tracking-[0.2em] text-slate-500">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 sm:text-[0.95rem]">
                 Contact
               </p>
 
-              <div className="mt-5 space-y-3 text-[0.98rem] leading-relaxed text-slate-700">
-                    <div className="footer-item footer-link-row">
-                    <TextRoll className="text-[1rem] md:text-base tracking-wider">
-                        5180 Demo Street, Suite 203 Arqené City, 400 001
-                    </TextRoll>
-                    </div>
+              <div className="mt-5 space-y-3 text-[1rem] leading-relaxed text-slate-700">
+                {/* Address – no TextRoll here */}
+                <div className="max-w-xs">
+                  <p className="text-[1.02rem] md:text-[1.06rem] tracking-wider">
+                    5180 Demo Street, Suite 203 Arqené City, 400 001
+                  </p>
+                </div>
+
                 <div className="mt-3 space-y-2">
-                  {/* Phone – clickable with hover roll */}
+                  {/* Phone – keep TextRoll */}
                   <div className="footer-item footer-link-row">
                     <a href="tel:+919876543210">
-                      <TextRoll className="text-[0.98rem] md:text-base">
+                      <TextRoll className="text-[1.02rem] md:text-[1.06rem]">
                         +91 98765 43210
                       </TextRoll>
                     </a>
                   </div>
 
-                  {/* Email – clickable with hover roll */}
+                  {/* Email – clean string, still animated */}
                   <div className="footer-item footer-link-row">
                     <a href="mailto:hello@arqene.studio">
-                      <TextRoll className="text-[0.98rem] md:text-base">
+                      <TextRoll className="text-[1.02rem] md:text-[1.06rem]">
                         hello@arqene.studio
                       </TextRoll>
                     </a>
@@ -176,16 +179,18 @@ function ArqeneFooter() {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
 
         {/* Divider + bottom row */}
         <div className="mt-10 border-t border-slate-400 pt-4 text-xs text-slate-500 md:flex md:items-center md:justify-between">
-          <p className="text-[1rem] tracking-wide">
+          <p className="text-sm tracking-wide sm:text-[0.95rem]">
             © {year} Arqené Studio. All rights reserved.
           </p>
-          <p className="mt-2 text-[1rem] tracking-wide md:mt-0">
-            Website by <span className="font-semibold text-slate-700">Arqené</span>
+          <p className="mt-2 text-sm tracking-wide sm:text-[0.95rem] md:mt-0">
+            Website by{" "}
+            <span className="font-semibold text-slate-700">Arqené</span>
           </p>
         </div>
       </div>
