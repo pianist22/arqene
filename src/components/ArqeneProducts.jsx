@@ -319,7 +319,7 @@ export default function Products() {
   return (
     <section
       ref={sectionRef}
-      className="py-24 bg-[#d6d9db] text-slate-900 overflow-hidden"
+      className="py-24 bg-[#d6d9db] rounded-b-[80px] text-slate-900 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10">
         <h2 className="mb-12 text-center text-4xl text-3xl  tracking-[0.25em] uppercase text-slate-500">
@@ -342,7 +342,7 @@ export default function Products() {
 <div className="relative">
   <div
     ref={trackRef}
-    className="flex gap-16 pl-8 pr-8 md:pl-16 md:pr-16 lg:pl-32 lg:pr-32"
+    className="flex gap-6 pl-8 pr-8 md:pl-16 md:pr-16 lg:pl-32 lg:pr-32"
   >
     {PRODUCTS.map((product) => (
       <article
@@ -353,35 +353,39 @@ export default function Products() {
         onMouseLeave={() => {
           window.dispatchEvent(new Event("cursor-small-leave"));
         }}
-        className="flex-shrink-0 w-[80vw] md:w-[45vw] lg:w-[32vw] max-w-[520px] flex flex-col items-center"
+        className="group flex-shrink-0 w-[80vw] md:w-[45vw] lg:w-[32vw] max-w-[520px] flex flex-col items-center transition-transform duration-300 ease-out hover:-translate-y-2"
       >
-              {/* big light card with centered product image */}
-              <div className="w-full bg-[#f5f1ec] aspect-[3/2] flex items-center justify-center">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="max-h-[70%] max-w-[80%] object-contain"
-                />
-              </div>
-
-              {/* text under image */}
-              <div className="mt-6 text-center space-y-1">
-                <p className="text-[11px] tracking-[0.2em] uppercase text-slate-500">
-                  {product.collection}
-                </p>
-                <p className="text-lg italic text-slate-700">
-                  {product.name}
-                </p>
-              </div>
-            </article>
-          ))}
+        {/* hover image effect */}
+        <div className="w-full max-w-[520px] aspect-[16/9] overflow-hidden">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          />
         </div>
-      </div>
+
+        {/* text under image */}
+        <div className="mt-6 text-center space-y-1">
+          <p className="text-[11px] tracking-[0.2em] uppercase text-slate-500">
+            {product.collection}
+          </p>
+          <p className="text-lg italic text-slate-700">
+            {product.name}
+          </p>
+        </div>
+      </article>
+    ))}
+    
+    {/* extra empty space after last card */}
+    <div className="flex-shrink-0 w-[20vw] md:w-[15vw] lg:w-[10vw]" />
+  </div>
+</div>
+
 
       {/* button under pinned gallery section */}
       <div className="mt-16 flex justify-center">
         <Link
-          href="/Products" // change to your showcase route
+          href="/products" // change to your showcase route
           
       
         >
